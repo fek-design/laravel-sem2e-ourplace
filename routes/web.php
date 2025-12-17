@@ -2,17 +2,17 @@
 
 use Illuminate\Support\Facades\Route;
 
-// This loads home.blade.php when someone goes to "/"
+// Home page route - displays the main landing page
 Route::get('/', function () {
     return view('home');
 });
 
-// This loads about.blade.php when someone goes to "/about"
-Route::get('/about', function () {
-    return view('about');
+// D&D Events page route - displays Dungeons & Dragons event information
+Route::get('/dnd', function () {
+    return view('dnd');
 });
 
-// This loads contact.blade.php when someone goes to "/contact"
+// Catalogue page route - displays menu and game catalogue
 Route::get('/catalogue', function () {
     return view('catalogue');
 });
