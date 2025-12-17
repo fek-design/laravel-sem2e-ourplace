@@ -4,7 +4,8 @@
 
 {{-- Page-specific stylesheets --}}
 @push('styles')
-    <link rel="stylesheet" href="{{ asset('css/dnd.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/pages/dnd.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/pages/global.css') }}">
 @endpush
 
 @section('content')

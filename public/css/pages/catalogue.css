@@ -1,0 +1,110 @@
+/* --- CATALOGUE GRID STYLES --- */
+/* Wrapper for catalogue page items with hover effect */
+.catalogue-item-wrapper {
+    position: relative; 
+    margin-bottom: 40px; 
+    cursor: pointer; 
+    transition: transform 0.3s ease;
+}
+.catalogue-item-wrapper:hover { 
+    transform: translateY(-10px); 
+    z-index: 10; 
+}
+
+/* Hero section background for catalogue page */
+.catalogue-hero {
+    background-image: url('/img/cat/cat-splash.jpg');
+    background-position: center 40%;
+    background-size: cover;
+}
+/* Apply same background to blurred pseudo-element */
+.catalogue-hero::after {
+    background-image: url('/img/cat/cat-splash.jpg');
+    background-position: center 40%;
+}
+
+/* Catalogue page image with A4 aspect ratio */
+.catalogue-page {
+    background: white; 
+    padding: 10px; 
+    width: 100%; 
+    aspect-ratio: 210/297;
+    object-fit: cover; 
+    box-shadow: 1px 4px 15px rgba(0,0,0,0.15); 
+    border-radius: 2px;
+}
+
+/* Slight rotation variations for visual interest */
+.col-md-4:nth-child(odd) .catalogue-item-wrapper { 
+    transform: rotate(1deg); 
+}
+.col-md-4:nth-child(even) .catalogue-item-wrapper { 
+    transform: rotate(-1deg); 
+}
+/* Straighten and scale on hover */
+.col-md-4:nth-child(odd) .catalogue-item-wrapper:hover { 
+    transform: scale(1.05) rotate(0deg); 
+}
+
+/* Page number label below catalogue items */
+.page-number {
+    font-family: var(--font-body); 
+    color: var(--text-soft); 
+    margin-top: 10px;
+    font-size: 0.95rem; 
+    letter-spacing: 0.2em; 
+    text-transform: uppercase;
+}
+
+/* --- MODAL --- */
+/* Transparent modal background for carousel */
+.modal-content { 
+    background-color: transparent; 
+    border: none; 
+}
+/* Full-width images in modal carousel */
+.modal-body img { 
+    width: 100%; 
+    height: auto; 
+    border-radius: 5px; 
+    box-shadow: 0 10px 40px rgba(0,0,0,0.5); 
+}
+/* White close button for dark modal */
+.btn-close-white {
+    filter: invert(1) grayscale(100%) brightness(200%);
+    position: absolute; 
+    right: -20px; 
+    top: -20px; 
+    z-index: 1060;
+}
+
+/* --- CONTACT INFO STYLES --- */
+/* Icon styling for contact information */
+.info-icon {
+    color: var(--primary-purple);
+    font-size: 1.1rem;
+}
+/* Link styling for contact information */
+.info-link {
+    color: var(--text-dark);
+    font-weight: 600;
+    letter-spacing: 0.05em;
+    text-decoration: none;
+    border-bottom: 1px solid rgba(45, 37, 51, 0.15);
+    padding-bottom: 2px;
+}
+/* Map iframe container with slight rotation */
+.map-frame {
+    height: 400px;
+    transform: rotate(1deg);
+    border: 1px solid rgba(143, 120, 198, 0.2) !important;
+}
+.map-frame iframe {
+    border: 0;
+}
+/* Floating note element positioned on map */
+.floating-note {
+    transform: rotate(-3deg) translate(20px, 20px);
+    font-size: 1.1rem;
+    border: 1px solid rgba(0,0,0,0.05);
+}
