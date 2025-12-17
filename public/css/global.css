@@ -356,3 +356,118 @@ footer {
         font-size: 1.2rem;
     }
 }
+
+/* --- SUBPAGE HERO (Shared by Catalogue & DnD) --- */
+/* Hero section for subpages with background image */
+.subpage-hero {
+    position: relative; 
+    min-height: 45vh; 
+    padding-top: 80px;
+    display: flex; 
+    align-items: center; 
+    justify-content: center;
+    background-size: cover; 
+    background-position: center 30%;
+    overflow: hidden;
+}
+/* Blurred background layer - creates a blurred duplicate of the background */
+.subpage-hero::after {
+    content: ''; 
+    position: absolute; 
+    top: -20px; 
+    left: -20px; 
+    width: calc(100% + 40px); 
+    height: calc(100% + 40px);
+    background-image: inherit;
+    background-size: cover; 
+    background-position: center 30%;
+    filter: blur(10px);
+    z-index: 0;
+    pointer-events: none;
+}
+/* Dark gradient overlay for text readability */
+.subpage-hero::before {
+    content: ''; 
+    position: absolute; 
+    top: 0; 
+    left: 0; 
+    width: 100%; 
+    height: 100%;
+    background: linear-gradient(to bottom, rgba(30, 20, 40, 0.7) 0%, rgba(30, 20, 40, 0.5) 60%, var(--bg-cream) 100%);
+    z-index: 1;
+}
+/* Ensure content is above blurred background and overlay */
+.subpage-hero > * {
+    position: relative;
+    z-index: 2;
+}
+/* Large heading for subpage heroes */
+.subpage-heading {
+    font-family: var(--font-logo);
+    font-size: clamp(2.2rem, 3.6vw, 3.3rem);
+    line-height: 1.05;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    font-weight: 600;
+    text-shadow: 0 8px 22px rgba(0,0,0,0.32);
+}
+/* Subtitle text below heading */
+.subpage-tagline {
+    font-family: var(--font-body);
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    font-size: 1rem;
+    text-shadow: 0 3px 12px rgba(0,0,0,0.5);
+}
+
+/* --- SHARED POLAROID/WASHI STYLES --- */
+/* Polaroid-style image wrapper with white border */
+.img-polaroid-wrapper {
+    background: white; 
+    padding: 15px 15px 70px 15px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+    position: relative; 
+    margin: 30px auto; 
+    width: fit-content;
+}
+/* Image inside polaroid with vintage sepia filter */
+.img-polaroid { 
+    width: 100%; 
+    max-width: 400px; 
+    height: auto; 
+    filter: sepia(15%); 
+}
+/* Decorative washi tape element at top of polaroid */
+.washi-tape-top {
+    position: absolute; 
+    top: -15px; 
+    left: 50%; 
+    transform: translateX(-50%);
+    backdrop-filter: blur(2px); 
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+/* Washi tape decorative element */
+.washi-tape {
+    position: absolute; 
+    top: -15px; 
+    left: 50%; 
+    transform: translateX(-50%);
+    width: 130px; 
+    height: 40px;
+    background-color: rgba(220, 188, 232, 0.7); 
+    backdrop-filter: blur(2px);
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    z-index: 2;
+}
+/* Drop shadow filter utility */
+.drop-shadow {
+    filter: drop-shadow(0px 2px 4px rgba(0,0,0,0.5));
+}
+/* Active navigation link styling */
+.nav-link.active {
+    color: var(--primary-purple) !important;
+    font-weight: 700;
+    text-decoration: underline;
+    text-decoration-thickness: 2px;
+    text-underline-offset: 4px;
+}
