@@ -1,0 +1,15 @@
+@import 'tailwindcss';
+
+@source '../../vendor/laravel/framework/src/Illuminate/Pagination/resources/views/*.blade.php';
+@source '../../storage/framework/views/*.php';
+@source '../**/*.blade.php';
+@source '../**/*.js';
+
+/* 1. Variables & Global Styles (Load these first) */
+@import 'variables.css';
+@import 'global.css';
+
+/* 2. Page Specific Styles */
+@import 'pages/home.css';
+@import 'pages/catalogue.css';
+@import 'pages/dnd.css';

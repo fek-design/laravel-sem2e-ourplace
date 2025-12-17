@@ -1,0 +1,358 @@
+/* --- GLOBAL RESET & TEXTURE --- */
+/* Base reset for html and body elements */
+html, body {
+    background-color: var(--bg-cream);
+    color: var(--text-dark);
+    font-family: var(--font-body);
+    font-size: var(--font-size-md);
+    line-height: var(--line-height-roomy);
+    letter-spacing: var(--tracking-tight);
+    overflow-x: hidden;
+    width: 100%;
+    margin: 0; 
+    padding: 0;
+}
+
+/* Subtle dot pattern texture overlay for visual interest */
+body {
+    background-image:
+        radial-gradient(rgba(203, 178, 255, 0.6) 1px, transparent 1px),
+        radial-gradient(rgba(255, 194, 226, 0.45) 1.2px, transparent 1.2px);
+    background-size: 22px 22px, 34px 34px;
+}
+
+/* Prevent horizontal overflow on sections */
+section { 
+    overflow-x: clip; 
+    position: relative; 
+}
+
+/* --- TYPOGRAPHY --- */
+/* Heading styles with consistent font family and spacing */
+h1, h2, h3, h4 {
+    font-family: var(--font-heading);
+    color: var(--text-dark);
+    font-weight: 600;
+    line-height: var(--line-height-tight);
+    letter-spacing: var(--tracking-tight);
+}
+h1 { font-size: var(--font-size-2xl); }
+h2 { font-size: var(--font-size-xl); }
+h3 { font-size: 1.5rem; }
+h4 { font-size: 1.25rem; }
+
+/* Body text and list items */
+p, li {
+    color: var(--text-muted);
+    font-size: var(--font-size-sm);
+    line-height: var(--line-height-roomy);
+}
+
+/* Small text and muted elements */
+small, .text-muted {
+    color: var(--text-soft) !important;
+    letter-spacing: var(--tracking-tight);
+}
+
+/* Small uppercase label text above headings */
+.eyebrow {
+    text-transform: uppercase;
+    letter-spacing: var(--tracking-wide);
+    font-size: var(--font-size-xs);
+    color: var(--text-soft);
+    font-weight: 600;
+}
+
+/* Large introductory paragraph text */
+.lede {
+    font-size: var(--font-size-lg);
+    color: var(--text-dark);
+    line-height: var(--line-height-cozy);
+    max-width: 60ch;
+    margin: 0 auto;
+}
+
+/* Decorative gradient underline effect for headings */
+.magic-underline {
+    display: inline-block; 
+    position: relative; 
+    padding-bottom: 10px;
+}
+.magic-underline::after {
+    content: ''; 
+    position: absolute; 
+    width: 100%; 
+    height: 6px;
+    background: linear-gradient(90deg, var(--accent-lilac), var(--accent-rose));
+    opacity: 0.7;
+    bottom: 4px; 
+    left: 0; 
+    border-radius: 4px; 
+    z-index: -1;
+}
+
+/* Handwritten-style note text with slight rotation */
+.handwritten-note {
+    font-family: var(--font-hand); 
+    color: var(--primary-purple);
+    font-size: 1.2rem; 
+    transform: rotate(-3deg); 
+    display: inline-block;
+    letter-spacing: 0.05em;
+}
+
+/* --- BUTTONS --- */
+/* Primary action button with purple background */
+.btn-custom-primary {
+    background-color: var(--primary-purple); 
+    color: white;
+    border-radius: 50px; 
+    padding: 12px 40px;
+    font-size: var(--font-size-sm); 
+    font-weight: 600; 
+    border: none;
+    transition: transform 0.2s, background-color 0.2s;
+    box-shadow: 0 6px 20px rgba(143, 120, 198, 0.25);
+}
+.btn-custom-primary:hover { 
+    background-color: var(--primary-purple-hover); 
+    color: white; 
+    transform: translateY(-1px); 
+}
+
+/* Outline button with glassmorphism effect */
+.btn-custom-outline {
+    background-color: rgba(255,255,255,0.1); 
+    backdrop-filter: blur(2px);
+    color: white; 
+    border: 2px solid rgba(255,255,255,0.8);
+    border-radius: 50px; 
+    padding: 10px 40px;
+    font-size: var(--font-size-sm); 
+    font-weight: 600; 
+    transition: all 0.3s;
+}
+.btn-custom-outline:hover { 
+    background-color: white; 
+    color: var(--primary-purple); 
+}
+
+/* --- NAVBAR (Shared) --- */
+/* Floating navigation bar with glassmorphism effect */
+.navbar-floating {
+    position: fixed; 
+    top: 15px; 
+    left: 50%; 
+    transform: translateX(-50%);
+    width: 95%; 
+    padding: 15px 25px;
+    background-color: rgba(255, 253, 245, 0.98); 
+    backdrop-filter: blur(12px);
+    border-radius: 8px; 
+    box-shadow: 0 12px 30px rgba(35, 31, 32, 0.08);
+    z-index: 1050; 
+    transition: all 0.3s ease;
+}
+/* Wider navbar on larger screens */
+@media (min-width: 992px) { 
+    .navbar-floating { 
+        width: 85%; 
+        max-width: 1100px; 
+    } 
+}
+/* Brand logo styling with hover effect matching button */
+.navbar-brand { 
+    color: var(--primary-purple); 
+    font-weight: 600; 
+    font-family: var(--font-logo); 
+    font-size: 1.3rem; 
+    letter-spacing: 0.08em; 
+    transition: all 0.3s ease;
+}
+.navbar-brand:hover { 
+    color: var(--primary-purple-hover); 
+}
+/* Navbar logo image - larger to accommodate logo */
+.navbar-logo {
+    height: 45px;
+    width: auto;
+    object-fit: contain;
+    transition: transform 0.3s ease;
+}
+.navbar-brand:hover .navbar-logo {
+    transform: scale(1.05);
+}
+/* Navigation link styling */
+.nav-link { 
+    color: var(--text-muted); 
+    font-weight: 600; 
+    font-size: var(--font-size-xs); 
+    letter-spacing: 0.08em; 
+    text-transform: uppercase; 
+}
+
+/* --- FOOTER (Shared) --- */
+/* Footer base styling with dashed border */
+footer { 
+    background-color: var(--bg-cream); 
+    padding: 50px 0; 
+    border-top: 2px dashed var(--light-purple); 
+}
+.footer-custom { 
+    background-color: var(--bg-cream); 
+    color: var(--text-dark); 
+}
+/* Footer logo with hover effect */
+.footer-logo {
+    font-family: var(--font-logo); 
+    color: var(--primary-purple);
+    font-size: 2.2rem; 
+    letter-spacing: 1.5px; 
+    transition: color 0.3s ease;
+}
+.footer-logo:hover { 
+    color: var(--accent-lilac); 
+}
+/* Handwritten-style tagline text */
+.footer-tagline { 
+    font-family: var(--font-hand); 
+    font-size: 1rem; 
+    color: var(--text-soft); 
+    letter-spacing: 0.06em; 
+}
+/* Social media icon links */
+.social-link { 
+    color: var(--text-muted); 
+    font-size: 1.4rem; 
+    transition: all 0.3s ease; 
+}
+.social-link:hover { 
+    color: var(--primary-purple); 
+    transform: translateY(-3px); 
+}
+/* Decorative divider line */
+.footer-divider { 
+    height: 1px; 
+    width: 60px; 
+    background-color: var(--light-purple); 
+}
+
+/* --- GOOGLE RATING WIDGET --- */
+/* Google Reviews rating box widget in footer */
+.google-rating-widget {
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+}
+/* Rating box container - smaller size */
+.google-rating-box {
+    display: inline-block;
+    background: white;
+    padding: 8px 14px;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    border: 2px solid var(--light-purple);
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+.google-rating-box:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(143, 120, 198, 0.2);
+    border-color: var(--primary-purple);
+    text-decoration: none;
+}
+/* Google icon in widget - smaller */
+.google-icon-widget {
+    font-size: 1.4rem;
+    color: var(--primary-purple);
+}
+/* Rating content */
+.rating-content {
+    display: flex;
+    flex-direction: column;
+    gap: 1px;
+}
+/* Rating stars display */
+.rating-stars {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+.rating-number {
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: var(--text-dark);
+    font-family: var(--font-heading);
+}
+.stars-display {
+    color: #FFA500;
+    font-size: 0.75rem;
+    letter-spacing: 1.5px;
+}
+.rating-text {
+    font-size: 0.65rem;
+    color: var(--text-muted);
+    line-height: 1.2;
+}
+.rating-text strong {
+    color: var(--text-dark);
+    font-weight: 600;
+}
+
+/* --- FOOTER STAMPS --- */
+/* Container for footer stamps in bottom right */
+.footer-stamps {
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+    display: flex;
+    gap: 15px;
+    align-items: center;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+}
+/* Individual stamp styling */
+.footer-stamp {
+    display: inline-block;
+    transition: transform 0.3s ease;
+    opacity: 0.85;
+}
+.footer-stamp:hover {
+    transform: scale(1.1);
+    opacity: 1;
+}
+/* Stamp image sizing */
+.stamp-image {
+    height: 60px;
+    width: auto;
+    object-fit: contain;
+    filter: drop-shadow(0 2px 4px rgba(0,0,0,0.1));
+}
+/* Responsive adjustments for footer elements */
+@media (max-width: 768px) {
+    .google-rating-widget {
+        position: static;
+        margin-top: 2rem;
+        display: flex;
+        justify-content: center;
+    }
+    .footer-stamps {
+        position: static;
+        justify-content: center;
+        margin-top: 1.5rem;
+        padding-top: 1rem;
+        border-top: 1px dashed var(--light-purple);
+    }
+    .stamp-image {
+        height: 50px;
+    }
+    .google-rating-box {
+        padding: 8px 12px;
+    }
+    .rating-number {
+        font-size: 1rem;
+    }
+    .google-icon-widget {
+        font-size: 1.2rem;
+    }
+}

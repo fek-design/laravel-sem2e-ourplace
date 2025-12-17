@@ -1,0 +1,47 @@
+:root {
+    /* --- COLOR PALETTE --- */
+    /* Main brand colors */
+    --primary-purple: #a86acb;      /* Lively lilac - main brand color */
+    --primary-purple-hover: #7c68ad; /* Darker purple for hover states */
+    --light-purple: #dec5ff;        /* Soft pastel lilac */
+    
+    /* Background colors */
+    --bg-cream: #fff7f2;            /* Warm cozy cream background */
+    --card-pink: #ffe4f1;           /* Sticky-note pink */
+    
+    /* Text colors */
+    --text-dark: #2b1c30;           /* Main dark text */
+    --text-muted: #786281;          /* Secondary muted text */
+    --text-soft: #a38fb7;           /* Soft/subtle text */
+    
+    /* Accent colors */
+    --accent-lilac: #cbb2ff;        /* Light lilac accent */
+    --accent-rose: #ffc2e2;         /* Rose pink accent */
+    --accent-sage: #dff5e5;         /* Sage green accent */
+    --accent-amber: #ffe3b8;        /* Amber/yellow accent */
+    --dnd-gold: #c5a059;            /* D&D themed gold */
+
+    /* --- TYPOGRAPHY --- */
+    /* Font families */
+    --font-logo: 'Playfair Display', Georgia, serif;
+    --font-heading: 'Playfair Display', Georgia, serif;
+    --font-body: -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'Helvetica Neue', Arial, sans-serif;
+    --font-hand: 'Playfair Display', Georgia, serif;
+    
+    /* Font sizes */
+    --font-size-xs: 0.875rem;
+    --font-size-sm: 1rem;
+    --font-size-md: 1.125rem;
+    --font-size-lg: 1.25rem;
+    --font-size-xl: clamp(1.5rem, 2.5vw, 2.1rem);
+    --font-size-2xl: clamp(2.5rem, 4vw, 3.5rem);
+    
+    /* Line heights */
+    --line-height-tight: 1.2;
+    --line-height-cozy: 1.5;
+    --line-height-roomy: 1.7;
+    
+    /* Letter spacing */
+    --tracking-tight: 0.02em;
+    --tracking-wide: 0.08em;
+}
